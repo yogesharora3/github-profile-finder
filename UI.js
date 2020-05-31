@@ -1,6 +1,7 @@
 class UI {
   constructor() {
     this.profile = document.querySelector(".profile");
+    this.repos = document.querySelector(".repos");
   }
   renderUser(profile) {
     console.log(profile);
@@ -55,5 +56,24 @@ class UI {
   };
   clearProfile() {
     this.profile.innerHTML = "";
+    this.repos.innerHTML = "";
+  }
+  renderRepos(repos) {
+    let output = `<div class="card text-center">
+    <div class="card-header">
+      Repos
+    </div>
+    <div class="card-body">
+      <div class="d-flex flex-column bd-highlight mb-3">`;
+
+    repos.forEach((cur) => {
+      console.log(cur);
+      output += `<div class="p-2 bd-highlight text-left">${cur.name}</div>`;
+    });
+    output += `    </div>
+    </div>
+  </div>`;
+
+    this.repos.innerHTML = output;
   }
 }

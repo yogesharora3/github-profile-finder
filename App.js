@@ -19,6 +19,7 @@ searchField.addEventListener("keyup", (e) => {
       } else {
         console.log(res.data);
         ui.renderUser(res.data);
+        ui.renderRepos(res.repos);
       }
     });
   } else {
